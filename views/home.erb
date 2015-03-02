@@ -1,0 +1,42 @@
+<table>
+  <thead>
+    <tr>
+      <th width="100">Player</th>
+      <th width="100">Score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Human</td>
+      <td><%= score["Human"] %></td>
+    </tr>
+    <tr>
+      <td>AI</td>
+      <td><%= score["A.I."] %></td>
+    </tr>
+  </tbody>
+</table>
+
+    <form action="/home" method="POST">
+      <% if (score["Human"] - score["A.I."]).abs == 2 || score.invert[3] %>
+        <% score["Human"] > score["A.I."] ? winner = "Human" : winner = "A.I." %>
+      <fieldset>
+        <legend><%= "#{winner} wins!" %></legend>
+        <button class="button tiny" name="restart" value="true">Play again</button>
+      </fieldset>
+      <% else %>
+    <fieldset>
+      <legend>Choose!</legend>
+      <div id="bottom_row">
+        <button class="button tiny" name="Human" value="rock">Rock</button>
+        <button class="button tiny" name="Human" value="paper">Paper</button>
+        <button class="button tiny" name="Human" value="scissors">Scissors</button>
+      </div>
+    </fieldset>
+      <% end %>
+    </form>
+</form>
+
+<% if message != "" %>
+  <h5 id="message"><%= message %></h5>
+<% end %>

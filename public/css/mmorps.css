@@ -1,0 +1,25 @@
+/* Let's put some makeup! */
+
+#title-block {
+  border-bottom: 1px solid #C2C2D6;
+  margin-bottom: 2em;
+}
+
+#bottom_row {
+  display: inline-block;
+}
+
+.button {
+  margin-left: 2em;
+  margin-top: 1.3em;
+}
+
+#no-message {
+  color: #fff;
+}
+
+#message {
+  margin-top: 1em;
+  margin-left: 0.5em;
+  color: #4775FF;
+}
