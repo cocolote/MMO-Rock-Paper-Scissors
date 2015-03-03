@@ -1,4 +1,5 @@
 require 'sinatra'
+require 'pry'
 
 enable :sessions
 
@@ -32,6 +33,14 @@ end
 ###############
 
 get '/' do
+  binding.pry
+  if session["user_id"]
+    binding.pry
+    session["user_id"] += 1
+  else
+    binding.pry
+    session["user_id"] = 1
+  end
   redirect '/home'
 end
 
@@ -47,7 +56,7 @@ end
 
 post '/home' do
   if params["restart"]
-    redirect '/'
+    redirect '/home'
   else
     params["A.I."] = ["rock", "paper", "scissors"].sample
     message = winner(params)
