@@ -1,5 +1,4 @@
 require 'sinatra'
-require 'pry'
 
 enable :sessions
 
@@ -33,12 +32,9 @@ end
 ###############
 
 get '/' do
-  binding.pry
   if session["user_id"]
-    binding.pry
     session["user_id"] += 1
   else
-    binding.pry
     session["user_id"] = 1
   end
   redirect '/home'
